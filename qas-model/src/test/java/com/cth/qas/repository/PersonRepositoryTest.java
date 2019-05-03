@@ -34,7 +34,7 @@ public class PersonRepositoryTest {
 		assertFalse(op.isPresent());
 	}
 	
-	 @Test
+//	 @Test
 	public void testFindAllPerson() {
 		Iterator<Person> it = personRepository.findAll().iterator();
 		while(it.hasNext()) {
@@ -43,14 +43,20 @@ public class PersonRepositoryTest {
 		}
 	}
 	
-//	 @Test
+	 @Test
 	public void testCreatePerson() {
 		Person person1 = new Person();
 		person1.setName("zhangsan");
+		person1.setGender(0);
+		person1.setAge(36);
+		person1.setTelephone("18618808810");
 		personRepository.save(person1);
 		
 		Person person2 = new Person();
 		person2.setName("lisi");
+		person2.setGender(1);
+		person2.setAge(25);
+		person2.setTelephone("18618806666");
 		personRepository.save(person2);
 	}
 	
