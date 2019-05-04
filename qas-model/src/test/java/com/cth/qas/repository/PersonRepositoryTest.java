@@ -43,7 +43,7 @@ public class PersonRepositoryTest {
 		}
 	}
 	
-	 @Test
+//	 @Test
 	public void testCreatePerson() {
 		Person person1 = new Person();
 		person1.setName("zhangsan");

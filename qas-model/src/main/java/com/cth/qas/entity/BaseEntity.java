@@ -1,9 +1,18 @@
 package com.cth.qas.entity;
 
+import java.util.Set;
+
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
+import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Property;
+import org.neo4j.ogm.annotation.Relationship;
+import org.springframework.stereotype.Repository;
 
+import com.cth.qas.relation.LendingTo;
+
+@Repository
+@NodeEntity
 public class BaseEntity {
 	
 	@Id @GeneratedValue
@@ -14,6 +23,9 @@ public class BaseEntity {
 	
 	@Property(name="telephone")
 	private String telephone;
+	
+	@Relationship(type="LENDING_TO")
+	private Set<LendingTo> lendingToSet;
 	
 	public Long getId() {
 		return id;
@@ -39,14 +51,12 @@ public class BaseEntity {
 		this.telephone = telephone;
 	}
 
-	@Override
-	public String toString() {
-		return "BaseEntity [id=" + id + ", name=" + name + ", telephone="
-				+ telephone + "]";
+	public Set<LendingTo> getLendingToSet() {
+		return lendingToSet;
 	}
 
-	public static void main(String[] args) {
-
+	public void setLendingToSet(Set<LendingTo> lendingToSet) {
+		this.lendingToSet = lendingToSet;
 	}
 
 }

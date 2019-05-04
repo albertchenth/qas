@@ -5,7 +5,7 @@ import org.neo4j.ogm.annotation.Property;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@NodeEntity(label="Person")
+@NodeEntity(label="PERSON")
 public class Person extends BaseEntity{
 	
 	@Property(name="gender")
@@ -30,12 +30,6 @@ public class Person extends BaseEntity{
 		this.age = age;
 	}
 
-	@Override
-	public String toString() {
-		return "Person [id=" + getId() + ", name=" + getName() + ", telephone="
-				+ getTelephone() + ", gender=" + getGender() + ", age=" + getAge() + "]";
-	}
-	
 	public static void main(String[] args) {
 
 	}
