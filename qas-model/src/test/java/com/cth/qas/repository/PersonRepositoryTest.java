@@ -3,11 +3,16 @@ package com.cth.qas.repository;
 import static org.junit.Assert.*;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -65,5 +70,29 @@ public class PersonRepositoryTest {
 		// personRepository.deleteAll();
 		Iterable<Person> it = personRepository.findAll();
 		personRepository.deleteAll(it);
+	}
+	
+//	@Test
+	public void testFindPerson() {
+		List<Person> personList = personRepository.findByName("李四");
+		for(Person p:personList) System.out.println(p.getName());
+		personList = personRepository.findByAgeAndGender(19, 0);
+		System.out.println("size="+personList.size());
+	}
+	
+//	@Test
+	public void testPageAndSort(){
+		Sort sort = new Sort(Sort.Direction.DESC, "age");
+		Pageable pageable = PageRequest.of(0, 1,sort);
+		Page<Person> page = personRepository.findAll(pageable);
+		Person p1 = page.getContent().get(0);
+		System.out.println(p1.getName() + " " + p1.getAge());
+	}
+	
+	@Test
+	public void testQueryAnnotation(){
+		Sort sort = new Sort(Sort.Direction.ASC, "person.age");
+		List<Person> persons = personRepository.getPersonBorrowFromCompany(sort);
+		for(Person p:persons) System.out.println(p.getName() + " " + p.getAge());
 	}
 }

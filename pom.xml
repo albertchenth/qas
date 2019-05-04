@@ -17,6 +17,7 @@
 		<neo4j.version>3.5.5</neo4j.version>
 		<logback.version>1.2.3</logback.version>
 		<slf4j.version>1.7.26</slf4j.version>
+		<jpa.version>2.1.6.RELEASE</jpa.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -75,6 +76,12 @@
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId>
 				<version>${logback.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-jpa</artifactId>
+				<version>${jpa.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
