@@ -11,11 +11,12 @@ import org.neo4j.ogm.annotation.RelationshipEntity;
 import org.neo4j.ogm.annotation.StartNode;
 import org.springframework.stereotype.Repository;
 
-import com.cth.qas.entity.BaseEntity;
+import com.cth.qas.base.BaseEntity;
+import com.cth.qas.base.RelationType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Repository
-@RelationshipEntity(type="LENDING_TO")
+@RelationshipEntity(type=RelationType.LENDING_TO)
 public class LendingTo {
 	
 	@Id @GeneratedValue

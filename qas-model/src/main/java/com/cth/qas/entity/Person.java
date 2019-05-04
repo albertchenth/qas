@@ -4,8 +4,11 @@ import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Property;
 import org.springframework.stereotype.Repository;
 
+import com.cth.qas.base.BaseEntity;
+import com.cth.qas.base.EntityType;
+
 @Repository
-@NodeEntity(label="PERSON")
+@NodeEntity(label=EntityType.PERSON)
 public class Person extends BaseEntity{
 	
 	@Property(name="gender")

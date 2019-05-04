@@ -1,4 +1,4 @@
-package com.cth.qas.entity;
+package com.cth.qas.base;
 
 import java.util.Set;
 
@@ -7,11 +7,9 @@ import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Property;
 import org.neo4j.ogm.annotation.Relationship;
-import org.springframework.stereotype.Repository;
 
 import com.cth.qas.relation.LendingTo;
 
-@Repository
 @NodeEntity
 public class BaseEntity {
 	

@@ -57,13 +57,13 @@ public class LendingToRepositoryTest {
 		com.setAddress("北京复兴门内大街1号 ");
 
 		Person lisi = new Person();
-		lisi.setName("lisi");
+		lisi.setName("李四");
 		lisi.setGender(1);
 		lisi.setAge(25);
 		lisi.setTelephone("18618806666");
 
 		Person wangwu = new Person();
-		wangwu.setName("wangwu");
+		wangwu.setName("王五");
 		wangwu.setTelephone("18618803333");
 		wangwu.setGender(0);
 		wangwu.setAge(18);

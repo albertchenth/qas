@@ -23,7 +23,7 @@ public class GraphDBConfiguration {
 	@Bean
 	public SessionFactory sessionFactory() {
 		// with domain entity base package(s)
-		String[] packages = { "com.cth.qas.entity", "com.cth.qas.relation" };
+		String[] packages = { "com.cth.qas.entity", "com.cth.qas.relation", "com.cth.qas.base" };
 		return new SessionFactory(configuration(), packages);
 	}
 
