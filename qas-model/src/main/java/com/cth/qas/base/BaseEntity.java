@@ -2,8 +2,10 @@ package com.cth.qas.base;
 
 import java.util.Set;
 
+import org.neo4j.ogm.annotation.CompositeIndex;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
+import org.neo4j.ogm.annotation.Index;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Property;
 import org.neo4j.ogm.annotation.Relationship;
@@ -11,6 +13,7 @@ import org.neo4j.ogm.annotation.Relationship;
 import com.cth.qas.relation.LendingTo;
 
 @NodeEntity
+//@CompositeIndex(properties={"name","telephone"},unique=true)
 public class BaseEntity {
 	
 	@Id @GeneratedValue
@@ -19,6 +22,7 @@ public class BaseEntity {
 	@Property(name="name")
 	private String name;
 	
+	@Index(unique=true)
 	@Property(name="telephone")
 	private String telephone;
 	
