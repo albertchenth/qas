@@ -9,6 +9,7 @@
 	<description>question and answer system</description>
 	<modules>
 		<module>qas-model</module>
+		<module>qas-service</module>
 	</modules>
 	<properties>
 		<spring.framework.version>5.1.6.RELEASE</spring.framework.version>
@@ -18,6 +19,7 @@
 		<logback.version>1.2.3</logback.version>
 		<slf4j.version>1.7.26</slf4j.version>
 		<jpa.version>2.1.6.RELEASE</jpa.version>
+		<guava.version>27.1-jre</guava.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -82,6 +84,11 @@
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-jpa</artifactId>
 				<version>${jpa.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
