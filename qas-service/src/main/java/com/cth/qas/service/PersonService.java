@@ -3,6 +3,8 @@ package com.cth.qas.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.cth.qas.entity.Person;
@@ -18,5 +20,9 @@ public class PersonService {
 	public List<Person> findAllPersonList(){
 		List<Person> personList = Lists.newArrayList(personRepository.findAll().iterator());
 		return personList;
+	}
+	
+	public Page<Person> findPersonsByPage(Pageable pageable) {
+		return personRepository.findAll(pageable);
 	}
 }

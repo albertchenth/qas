@@ -2,6 +2,7 @@ package com.cth.qas.repository;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
@@ -89,10 +90,25 @@ public class PersonRepositoryTest {
 		System.out.println(p1.getName() + " " + p1.getAge());
 	}
 	
-	@Test
+//	@Test
 	public void testQueryAnnotation(){
 		Sort sort = new Sort(Sort.Direction.ASC, "person.age");
 		List<Person> persons = personRepository.getPersonBorrowFromCompany(sort);
 		for(Person p:persons) System.out.println(p.getName() + " " + p.getAge());
+	}
+	
+	@Test
+	public void testCreate20Persons(){
+		int num=20;
+		List<Person> personList = new ArrayList<Person>();
+		for(int i=0;i<num;i++) {
+			Person person = new Person();
+			person.setName("zhangsan" + i);
+			person.setGender(0);
+			person.setAge(36);
+			person.setTelephone("186188088" + (i<10?("0" + i):i));
+			personList.add(person);
+		}
+		personRepository.saveAll(personList);
 	}
 }

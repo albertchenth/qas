@@ -10,6 +10,7 @@
 	<modules>
 		<module>qas-model</module>
 		<module>qas-service</module>
+		<module>qas-web</module>
 	</modules>
 	<properties>
 		<spring.framework.version>5.1.6.RELEASE</spring.framework.version>
@@ -20,9 +21,40 @@
 		<slf4j.version>1.7.26</slf4j.version>
 		<jpa.version>2.1.6.RELEASE</jpa.version>
 		<guava.version>27.1-jre</guava.version>
+		<taglibs.standard.version>1.2.5</taglibs.standard.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.framework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.framework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.framework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.framework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.framework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.taglibs</groupId>
+			<artifactId>taglibs-standard-impl</artifactId>
+			<version>${taglibs.standard.version}</version>
+		</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-test</artifactId>
